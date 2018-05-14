@@ -1,0 +1,44 @@
+program UTS;
+uses crt;
+
+const
+MAXS=10;
+var
+   i:integer;
+   A:array[1..10]of integer;
+
+   procedure klik();
+   begin
+        i:=i-1;
+   end;
+
+   function klek (x:integer):integer;
+   begin
+        writeln('fungsi klek ',klek);
+        if(x=MAXS)then
+           klek:=A[x]*A[1]
+        else
+         klek:=A[x]*A[x+1];
+        end;
+
+   function klok():integer;
+         var
+            tmp:integer;
+         begin
+         writeln('fungsi klok ',klok);
+              if(i=0)then
+              klok:=i
+         else
+              begin
+                   tmp:=i;
+                   klik();
+                   klok:=klok()+klek(tmp);
+              end;
+         end;
+begin
+A[1]:=1;A[2]:=2;A[3]:=3;A[4]:=4;A[5]:=5;
+A[6]:=6;A[10]:=11;A[9]:=9;A[7]:=8;A[8]:=7;
+i:=10;
+writeln( klok());
+readkey;
+end.
